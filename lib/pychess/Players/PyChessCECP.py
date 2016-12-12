@@ -29,8 +29,8 @@ if sys.platform != "win32":
     import readline
     readline.clear_history()
 
-ASCII = sys.platform == "win32"
-
+# ASCII = sys.platform == "win32"
+ASCII = True
 
 class PyChessCECP(PyChess):
     def __init__(self):
