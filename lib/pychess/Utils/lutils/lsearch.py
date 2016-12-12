@@ -73,25 +73,25 @@ def alphaBeta(board, depth, alpha=-MATE_VALUE, beta=MATE_VALUE, ply=0):
     # Look in the end game table
     ############################################################################
 
-    global egtb
-    if egtb:
-        tbhits = egtb.scoreAllMoves(board)
-        if tbhits:
-            move, state, steps = tbhits[0]
+    # global egtb
+    # if egtb:
+    #     tbhits = egtb.scoreAllMoves(board)
+    #     if tbhits:
+    #         move, state, steps = tbhits[0]
 
-            if state == DRAW:
-                score = 0
-            elif board.color == WHITE:
-                if state == WHITEWON:
-                    score = MATE_VALUE - steps
-                else:
-                    score = -MATE_VALUE + steps
-            else:
-                if state == WHITEWON:
-                    score = -MATE_VALUE + steps
-                else:
-                    score = MATE_VALUE - steps
-            return [move], score
+    #         if state == DRAW:
+    #             score = 0
+    #         elif board.color == WHITE:
+    #             if state == WHITEWON:
+    #                 score = MATE_VALUE - steps
+    #             else:
+    #                 score = -MATE_VALUE + steps
+    #         else:
+    #             if state == WHITEWON:
+    #                 score = -MATE_VALUE + steps
+    #             else:
+    #                 score = MATE_VALUE - steps
+    #         return [move], score
 
     ###########################################################################
     # We don't save repetition in the table, so we need to test draw before   #
